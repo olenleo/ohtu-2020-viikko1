@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 
 public class VarastoTest {
 
-    Varasto varasto, taysiVarasto, puoliTaysiVarasto,negatiivinenVarasto, toinenNegatiivinenVarasto;
+    Varasto varasto, taysiVarasto, halfFullStorage,negatiivinenVarasto, toinenNegatiivinenVarasto;
     double vertailuTarkkuus = 0.0001;
 
     @Before
@@ -21,7 +21,7 @@ public class VarastoTest {
         negatiivinenVarasto= new Varasto(-0.1, -0.1);
         toinenNegatiivinenVarasto = new Varasto(-20);
         taysiVarasto = new Varasto(10,20);
-        puoliTaysiVarasto = new Varasto(10,5);
+        halfFullStorage = new Varasto(10,5);
     }
     @Test
     public void negatiivinenLisaysEiMuutaSaldoa() {
@@ -52,7 +52,7 @@ public class VarastoTest {
 
     @Test
     public void alustettuunVarastoonMahtuu() {
-        assertEquals(5, puoliTaysiVarasto.getSaldo(), vertailuTarkkuus);
+        assertEquals(5, halfFullStorage.getSaldo(), vertailuTarkkuus);
     }
 
 
@@ -131,7 +131,7 @@ public class VarastoTest {
     }
     @Test
     public void otetaanKaikkiMitaVoidaan() {
-        puoliTaysiVarasto.otaVarastosta(20);
+        halfFullStorage.otaVarastosta(20);
         // saldon pitäisi olla 0
         assertEquals(0.0, varasto.getSaldo(), vertailuTarkkuus);
     }
@@ -150,7 +150,7 @@ public class VarastoTest {
     @Test
     public void toStringMetodiPalauttaaOikein() {
         String vertailtava = "saldo = " + 5.0 + ", vielä tilaa " + 5.0;
-        assertEquals(vertailtava, puoliTaysiVarasto.toString());
+        assertEquals(vertailtava, halfFullStorage.toString());
         
     }
 
