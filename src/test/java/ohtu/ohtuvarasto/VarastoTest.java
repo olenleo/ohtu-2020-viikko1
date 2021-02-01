@@ -31,7 +31,7 @@ public class VarastoTest {
 
     @Test
     public void negatiivinenKonstruktoriToimiiOikein() {
-        assertEquals(0.2, toinenNegatiivinenVarasto.getTilavuus(), vertailuTarkkuus);
+        assertEquals(0.0, toinenNegatiivinenVarasto.getTilavuus(), vertailuTarkkuus);
     }
 
     @Test
