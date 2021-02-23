@@ -26,8 +26,9 @@ jobs:
       run: ./gradlew jacocoTestReport
     - name: Data to codecov
       run: bash <(curl -s https://codecov.io/bash)
-    - name: Checkstyle
+    - name: Grant execute permission for gradle
       run: chmod +x gradle
+    - name: Run checkstylemain
       run: ./gradle checkstyleMain
 
 
