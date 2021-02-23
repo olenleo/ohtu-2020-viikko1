@@ -26,11 +26,9 @@ jobs:
       run: ./gradlew jacocoTestReport
     - name: Data to codecov
       run: bash <(curl -s https://codecov.io/bash)
-  run_checkstyle:
-    runs-on: ubuntu-latest
-        
-    steps:
-    - uses: actions/checkout@v2
-    - name: Run checkstyle
-    run: ./gradle checkstyleMain
+    - name: Checkstyle
+      run: ./gradle checkstyleMain
 
+
+  
+  
